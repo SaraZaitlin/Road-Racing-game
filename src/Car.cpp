@@ -8,7 +8,7 @@ Car::Car(sf::Vector2f location, int chose) :m_totalFule(200), m_total_coins(0)
 Car::~Car()
 {
 }
-//פונקציה האחראית לעדכן את התמונה של השחקן
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ ֳ§ֳ¸ֳ ֳ©ֳ÷ ֳ¬ֳ²ֳ£ֳ«ֳ¯ ֳ ֳ÷ ֳ₪ֳ÷ֳ®ֳ¥ֳ°ֳ₪ ֳ¹ֳ¬ ֳ₪ֳ¹ֳ§ֳ·ֳ¯
 void Car::UpdateObject( sf::Vector2f location, int chose)
 {
     auto it = Resources::instance().m_image.find("car");
@@ -19,12 +19,12 @@ void Car::UpdateObject( sf::Vector2f location, int chose)
     m_spritObject.setTexture(it->second[chose]);
  
 }
-//פונקציה האחראית להדפיס את הרכב
+//Another function is to print the player on the board
 void Car::draw(sf::RenderWindow& window)const
 {
     window.draw(m_spritObject);
 }
-//פונקציה האחראית על התזוזה של הרכב
+//Function responsible for moving the player (car)
 void Car::moveCar(int speed, sf::Time deltaTime)
 {
 
@@ -37,25 +37,25 @@ void Car::moveCar(int speed, sf::Time deltaTime)
     return;
 
 }
-//פונקציה המחזירה את המיקום
+//Function responsible for giving the current position of the object
 sf::Vector2f Car::getPosition()
 {
     return m_spritObject.getPosition();
 
 }
 
-//פונקציה המוסיפה את מי שרוצה להרשם
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ¥ֳ±ֳ©ֳ´ֳ₪ ֳ ֳ÷ ֳ®ֳ© ֳ¹ֳ¸ֳ¥ֳ¶ֳ₪ ֳ¬ֳ₪ֳ¸ֳ¹ֳ­
 void Car::RegisterObserver(Observer* pObserver)
 {
     vec_pObserver_.push_back((pObserver));
 
 }
-//פונקציה המסירה 
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ±ֳ©ֳ¸ֳ₪ 
 void Car::RemoveObserver(Observer* pObserver)
 {
     vec_pObserver_.erase(remove(vec_pObserver_.begin(), vec_pObserver_.end(), pObserver), vec_pObserver_.end());
 }
-//פונקציה האחראית לעדכן את כל מי שנירשם (תצוגת מידה ושלב.. 
+//Update information display when there is a change (when the player meets the objects in the game).
 void Car::NotifyObservers()
 {
     for (auto iter = vec_pObserver_.begin(); iter != vec_pObserver_.end(); ++(iter))
@@ -64,7 +64,7 @@ void Car::NotifyObservers()
     }
 
 }
-//פונקציה המביאה את הגבולות של רכב השחקן
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ¡ֳ©ֳ ֳ₪ ֳ ֳ÷ ֳ₪ֳ¢ֳ¡ֳ¥ֳ¬ֳ¥ֳ÷ ֳ¹ֳ¬ ֳ¸ֳ«ֳ¡ ֳ₪ֳ¹ֳ§ֳ·ֳ¯
 FloatRect Car::getGlobalBounds()
 {
     return m_spritObject.getGlobalBounds();
@@ -72,7 +72,7 @@ FloatRect Car::getGlobalBounds()
 
 
 //----------------------------------
-//פונקציה המוסיפה מטבעות
+//Function responsible during the player's encounter with coins for adding 5 points to the player.
 void Car::additionACoin()
 {
     //std::cout << "coin " << m_total_coins << "\n";
@@ -80,7 +80,7 @@ void Car::additionACoin()
     NotifyObservers();
 }
 //--------------------------
-//פונקציה המורידה מטבעות
+//A function responsible for reducing the player's score when collision an opponent.
 void Car::decreaseCoin()
 {
     //std::cout << "coin " << m_total_coins << "\n";
@@ -90,13 +90,13 @@ void Car::decreaseCoin()
     NotifyObservers();
 }
 //---------------------------
-//פונקציה האחראית על הוספת דלק
+//The function is responsible for adding fuel to the player when a collision with a gift.
 void Car::additionFuel(int fuel)
 {
     m_totalFule=m_totalFule+ fuel;
     NotifyObservers();
 }
-//פונקציה המורידה דלק
+//The function is responsible for reducing fuel per player in the event of an enemy collision.
 void Car::decreaseFuel(sf::Time deltaTime)
 {
      m_totalFule = m_totalFule - deltaTime.asSeconds();
