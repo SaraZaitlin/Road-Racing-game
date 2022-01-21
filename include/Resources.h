@@ -5,7 +5,7 @@
 #include <SFML/Audio.hpp>
 #include <map>
 #include <iostream>
-//Department is in charge of handling photos and songs Singleton Department
+//The department is responsible for handling the uploads of photos and songs from the Singleton Department.
 class Resources
 {
 public:
