@@ -11,7 +11,7 @@ Level::Level(std::unique_ptr<Car>& pCar) :m_car(pCar)
 Level::~Level()
 {
 }
-//פונקציה האחראית לנהל את שלבי המשחק
+//A primary function is responsible for running the current level.
 void Level::runLevel(sf::RenderWindow& window,std::string song)
 {
 	Resources::instance().getMusic(song).get()->play();
@@ -35,7 +35,7 @@ void Level::runLevel(sf::RenderWindow& window,std::string song)
 	Resources::instance().getMusic(song).get()->stop();
 
 }
-//פונקציה המטפלתת בלחיצות המתקבלות מהמשתמש להוזזת הרכב
+//Function responsible for handling mouse and keyboard clicks.
 void Level::endelEvent(sf::RenderWindow& window,sf::Time deltaTime)
 {
 	Event e;
@@ -54,13 +54,13 @@ void Level::endelEvent(sf::RenderWindow& window,sf::Time deltaTime)
 	
 	}
 }
-//פונקציה המעדכנת אתמספר המטבעות והדלק 
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ²ֳ£ֳ«ֳ°ֳ÷ ֳ ֳ÷ֳ®ֳ±ֳ´ֳ¸ ֳ₪ֳ®ֳ¨ֳ¡ֳ²ֳ¥ֳ÷ ֳ¥ֳ₪ֳ£ֳ¬ֳ· 
 void Level::Update(int& coins, float& totalFule)
 {
 	m_total_coins = coins;
 	m_totalFule = totalFule;
 }
-//פונקציה הבודקת אם הסתיים השלב ומטפלת בשלב הבא
+//Function responsible for checking if the phase is over (finished collecting the number of coins)
 bool Level::checkEndLevel(BackgroundGame& BackgroundGame, sf::RenderWindow& window)
 {
 	if (m_totalFule <= 0)
@@ -79,7 +79,7 @@ bool Level::checkEndLevel(BackgroundGame& BackgroundGame, sf::RenderWindow& wind
 	return true;
 }
 
-//פונקציה הבודקת איך הסתיים המשחק
+//A function is responsible for checking whether it has failed or completed the stage in victory
 void Level::howEndGame(sf::RenderWindow& window)
 {
 
@@ -90,7 +90,7 @@ void Level::howEndGame(sf::RenderWindow& window)
 
 }
 
-//פונקציה אשר מגדירה את התמונה 
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ ֳ¹ֳ¸ ֳ®ֳ¢ֳ£ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ₪ֳ÷ֳ®ֳ¥ֳ°ֳ₪ 
 void Level::SetUpTextur(int index, sf::RenderWindow& window)
 {
 
@@ -113,7 +113,7 @@ void Level::SetUpTextur(int index, sf::RenderWindow& window)
 
 }
 //-----------------------------------------
-//פונקציה המדפיסה לשחקן בסוף המשחק כמה מטבעות אסף
+//
 void Level::displayHowCoins(sf::RenderWindow& window,int coin)
 {
 	
@@ -136,7 +136,7 @@ void Level::displayHowCoins(sf::RenderWindow& window,int coin)
 }
 
 //-----------------------------
-//פונקציה המגדירה sprite
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ¢ֳ£ֳ©ֳ¸ֳ₪ sprite
 sf::Sprite Level::setTextur(std::string name,int index)
 {
 	sf::Sprite sprite;
