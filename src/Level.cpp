@@ -54,7 +54,7 @@ void Level::endelEvent(sf::RenderWindow& window,sf::Time deltaTime)
 	
 	}
 }
-//ôåð÷öéä äîòãëðú àúîñôø äîèáòåú åäãì÷ 
+//A function that updates how many coins and fuel a player has.
 void Level::Update(int& coins, float& totalFule)
 {
 	m_total_coins = coins;
@@ -90,7 +90,7 @@ void Level::howEndGame(sf::RenderWindow& window)
 
 }
 
-//ôåð÷öéä àùø îâãéøä àú äúîåðä 
+//A function that shows the user whether he won or lost and how many coins he collected.
 void Level::SetUpTextur(int index, sf::RenderWindow& window)
 {
 
@@ -113,7 +113,7 @@ void Level::SetUpTextur(int index, sf::RenderWindow& window)
 
 }
 //-----------------------------------------
-//
+//A function that prints several collected coins to the user.
 void Level::displayHowCoins(sf::RenderWindow& window,int coin)
 {
 	
@@ -136,7 +136,7 @@ void Level::displayHowCoins(sf::RenderWindow& window,int coin)
 }
 
 //-----------------------------
-//ôåð÷öéä äîâãéøä sprite
+//Function for setting the position of the image on the window.
 sf::Sprite Level::setTextur(std::string name,int index)
 {
 	sf::Sprite sprite;
