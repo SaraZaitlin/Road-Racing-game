@@ -24,7 +24,7 @@ BackgroundGame::BackgroundGame(std::unique_ptr<Car>& car,int &level)
 
 	setTrack();
 }
-//פונקציה המגדירה את התמונת רקע של כל שלב
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ¢ֳ£ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ₪ֳ÷ֳ®ֳ¥ֳ°ֳ÷ ֳ¸ֳ·ֳ² ֳ¹ֳ¬ ֳ«ֳ¬ ֳ¹ֳ¬ֳ¡
 void BackgroundGame::setSpritBg(sf::Sprite &sprite)
 {
 	sprite.setTextureRect(IntRect(0, 0, 5000, 411));
@@ -37,7 +37,7 @@ BackgroundGame::~BackgroundGame()
 
 
 
-//פונקציה המאתחלת את הלוח 
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ ֳ÷ֳ§ֳ¬ֳ÷ ֳ ֳ÷ ֳ₪ֳ¬ֳ¥ֳ§ 
 void BackgroundGame::setTrack()
 {
 	m_lines.clear();
@@ -47,12 +47,12 @@ void BackgroundGame::setTrack()
 		m_lines.emplace_back(std::make_unique<Line>(i,m_level));
 
 }
-//פונקציה המאתחלת את מספר השלב
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ ֳ÷ֳ§ֳ¬ֳ÷ ֳ ֳ÷ ֳ®ֳ±ֳ´ֳ¸ ֳ₪ֳ¹ֳ¬ֳ¡
 void BackgroundGame::setLevel(int level)
 {
 	m_level = level;
 }
-//פונקציה האחראית להדפיס את הלוח
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ ֳ§ֳ¸ֳ ֳ©ֳ÷ ֳ¬ֳ₪ֳ£ֳ´ֳ©ֳ± ֳ ֳ÷ ֳ₪ֳ¬ֳ¥ֳ§
 void BackgroundGame::run(RenderWindow& window)
 {
 	if (m_startPos >= TRACK_END)
@@ -64,7 +64,7 @@ void BackgroundGame::run(RenderWindow& window)
 	this->draw(window);
 }
 
-//פונקציה המדפיסה את הרקע
+//ֳ´ֳ¥ֳ°ֳ·ֳ¶ֳ©ֳ₪ ֳ₪ֳ®ֳ£ֳ´ֳ©ֳ±ֳ₪ ֳ ֳ÷ ֳ₪ֳ¸ֳ·ֳ²
 void BackgroundGame::draw(RenderWindow& window)
 {
 	window.clear(Color(0 ,191 ,255));
@@ -72,7 +72,7 @@ void BackgroundGame::draw(RenderWindow& window)
 	drawRoad(window);
 	drawLines(window);
 }
-//פונקציה המציירת את המסלול
+//A function that builds an array with 300 new rows.
 void BackgroundGame::drawRoad(RenderWindow& window)
 {
 	float maxy = m_height;
@@ -87,8 +87,8 @@ void BackgroundGame::drawRoad(RenderWindow& window)
 		maxy = m_lines[n % m_lines.size()]->getCenter().y;
 		Color road = (n / 3) % 2 ? Color(107, 107, 107) : Color(105, 105, 105);
 		Color grass;
-		if (m_level == 1)  grass = (n / 3) % 2 ? Color(0, 100, 0) : Color(34, 139, 34); //ירוק
-		else grass = (n / 3) % 2 ? Color(255 ,250 ,250) : Color(240 ,255 ,240);//לבן
+		if (m_level == 1)  grass = (n / 3) % 2 ? Color(0, 100, 0) : Color(34, 139, 34); //ֳ©ֳ¸ֳ¥ֳ·
+		else grass = (n / 3) % 2 ? Color(255 ,250 ,250) : Color(240 ,255 ,240);//ֳ¬ֳ¡ֳ¯
 		Color roadSide = (n / 3) % 2 ? Color::Black : Color::White;
 
 		
@@ -105,7 +105,7 @@ void BackgroundGame::drawRoad(RenderWindow& window)
 		drawQuad(window, road, x2, y2, w2, x1, y1, w1);
 	}
 }
-//פונקציה המציירת את האוביקטים שבכל שורה (מטבעות.... 
+//A function that prints a line from the array and starts it in reverse order.
 void BackgroundGame::drawLines(RenderWindow& window)const
 {
 	for (int n = m_startPos + 300; n > m_startPos; n--) {
@@ -122,7 +122,7 @@ void BackgroundGame::drawLines(RenderWindow& window)const
 	}
 	
 }
-//הדפסת שורה בלוח
+//ֳ₪ֳ£ֳ´ֳ±ֳ÷ ֳ¹ֳ¥ֳ¸ֳ₪ ֳ¡ֳ¬ֳ¥ֳ§
 void BackgroundGame::drawQuad(RenderWindow& window, Color c, float x1, float y1, float z1, float x2, float y2, float z2)const
 {
 	ConvexShape shape(4);
