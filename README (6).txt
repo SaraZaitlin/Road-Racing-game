@@ -1,17 +1,21 @@
 Submission of a second semester project in the second year of an object-oriented programming course and game development:
 Serves:
-Sarah Zeitlin: 209181874
+Sara Zeitlin: 209181874
 Shira Alfasi: 208175737
 
 
 About the program:
 A desktop app of the Road Running game,  developed in C++ by using the principles of OOP. GUI development using the SFML library. The game has several levels with difficulties that increased.
-In the game we have a car that travels only in one direction, and all the time enemies, gifts, etc. come in front of it, the car can move left and right inside the lane.
-In her mishaps with a stone-type enemy - she drops coins.
-In her mishaps with a car-type enemy, she loses fuel.
-In her mishap with a fox she drops fuel and coins and is in stage 2.
+
+At the beginning of the game, there is a menu where you can choose a car type and background music.
+
+In the game, we have a car that travels only in one direction, and all the time enemies, gifts, etc. come in front of it, the car can move left and right inside the lane.
+In her collision with a stone-type enemy - she loses coins.
+In her collision with a car-type enemy, she loses fuel.
+In her collision with a fox she loses fuel and coins (level 2).
 The car moves on to the next stage only after collecting all the coins, and without running out of fuel ....
 Some of the enemies are moving towards the player ...
+
 
 The departments of the year:
 AddingCoins: This class is responsible for adding coins to the player, and inherits from the Gift class.
