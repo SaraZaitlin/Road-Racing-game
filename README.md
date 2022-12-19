@@ -1,4 +1,4 @@
-# Road-Running-game
+# Road-Racing-game
 Submission of a second semester project in the second year of an object-oriented programming course and game development:
 Serves:
 Sara Zeitlin: 209181874
@@ -6,7 +6,9 @@ Shira Alfasi: 208175737
 
 
 About the program:
-A desktop app of the Road Running game,  developed in C++ by using the principles of OOP. GUI development using the SFML library. The game has several levels with difficulties that increased.
+A desktop app of the Road Racing game,  developed in C++ by using the principles of OOP. GUI development using the SFML library. The game has several levels with difficulties that increased.
+Wanna go for a drive and enjoy a traffic game? Navigate your vehicle on the road to manage to collect the gifts in the allotted time and avoid colliding with obstacles.
+This game is 3D graphic so you feel like you are driving for real.
 
 At the beginning of the game, there is a menu where you can choose a car type and background music.
 ![image](https://user-images.githubusercontent.com/88738433/182311310-f1eeaf63-6e1d-4e63-bdba-8011211184bb.png)
