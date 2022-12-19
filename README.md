@@ -6,7 +6,7 @@ Shira Alfasi: 208175737
 
 
 About the program:
-A desktop app of the Road Racing game,  developed in C++ by using the principles of OOP. GUI development using the SFML library. The game has several levels with difficulties that increased.
+A desktop app of the Road Racing game,  developed in C++ by using the principles of OOP and Design Patterns principles. GUI development using the SFML library. The game has several levels with difficulties that increased.
 Wanna go for a drive and enjoy a traffic game? Navigate your vehicle on the road to manage to collect the gifts in the allotted time and avoid colliding with obstacles.
 This game is 3D graphic so you feel like you are driving for real.
 
